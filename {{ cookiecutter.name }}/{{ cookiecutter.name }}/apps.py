@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class AppConfig(AppConfig):
+class {{ cookiecutter.name | capitalize }}Config(AppConfig):
     name = '{{ cookiecutter.name }}'
