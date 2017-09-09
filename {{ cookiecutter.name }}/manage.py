@@ -21,6 +21,7 @@ settings.configure(
         'django.contrib.auth',
         '{{ cookiecutter.name }}',
     ),
+    ROOT_URLCONF='{{ cookiecutter.name }}.urls',
 )
 #endsnippet
 
