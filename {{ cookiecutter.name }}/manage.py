@@ -6,6 +6,8 @@ parser = AP(description="Perform django commands in a reusable app")
 parser.add_argument("action", help="command (e.g. 'makemigrations', 'shell', 'test')")
 args = parser.parse_args()
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # https://stackoverflow.com/questions/30656162/migrations-in-stand-alone-django-app#answer-32379263
 import sys
 import django
@@ -21,15 +23,15 @@ settings.configure(
         'django.contrib.auth',
         '{{ cookiecutter.name }}',
     ),
-    ROOT_URLCONF='{{ cookiecutter.name }}.urls',
 )
 #endsnippet
+
+if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "urls.py")):
+    settings.ROOT_URLCONF='{{ cookiecutter.name }}.urls'
 
 if args.action == "test":
     # 'test' action requires the default database configured
     # Use in-memory sqlite3
-    import os
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     settings.DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
