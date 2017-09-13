@@ -23,6 +23,7 @@ settings.configure(
         'django.contrib.auth',
         '{{ cookiecutter.name }}',
     ),
+    USE_TZ=True,
 )
 #endsnippet
 
