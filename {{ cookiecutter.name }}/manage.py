@@ -30,6 +30,20 @@ settings.configure(
 if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "urls.py")):
     settings.ROOT_URLCONF='{{ cookiecutter.name }}.urls'
 
+if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "templates")):
+    settings.TEMPLATES=[
+        {
+            "BACKEND": 'django.template.backends.django.DjangoTemplates',
+            "DIRS": [
+                os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "templates"),
+            ],
+            "OPTIONS": {
+                "context_processors": [
+                    'django.contrib.auth.context_processors.auth',
+                ],
+            },
+        }
+    ]
 if args.action == "test":
     # 'test' action requires the default database configured
     # Use in-memory sqlite3
