@@ -7,7 +7,7 @@ parser.add_argument("action", help="command (e.g. 'makemigrations', 'shell', 'te
 args = parser.parse_args()
 
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # https://stackoverflow.com/questions/30656162/migrations-in-stand-alone-django-app#answer-32379263
 import sys
 import django
