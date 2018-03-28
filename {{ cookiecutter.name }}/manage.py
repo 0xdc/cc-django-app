@@ -15,7 +15,6 @@ import django
 from django.conf import settings
 from django.core.management import call_command
 
-
 settings.configure(
     DEBUG=True,
     INSTALLED_APPS=(
@@ -28,10 +27,10 @@ settings.configure(
 #endsnippet
 
 if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "urls.py")):
-    settings.ROOT_URLCONF='{{ cookiecutter.name }}.urls'
+    settings.ROOT_URLCONF = '{{ cookiecutter.name }}.urls'
 
 if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "templates")):
-    settings.TEMPLATES=[
+    settings.TEMPLATES = [
         {
             "BACKEND": 'django.template.backends.django.DjangoTemplates',
             "DIRS": [
