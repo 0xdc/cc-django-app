@@ -4,11 +4,12 @@
 Quick start
 -----------
 
-1. Add "{{ cookiecutter.name }}" to your INSTALLED_APPS setting like this::
+1. Add "{{ cookiecutter.name }}.apps.{{ cookiecutter.name | capitalize }}Config" to
+   your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
-        '{{ cookiecutter.name }}',
+        '{{ cookiecutter.name }}.apps.{{ cookiecutter.name | capitalize }}Config',
     ]
 
 2. Include the {{ cookiecutter.name }} URLconf in your project urls.py like this::

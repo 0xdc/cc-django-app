@@ -20,7 +20,7 @@ settings.configure(
     INSTALLED_APPS=(
         'django.contrib.contenttypes',
         'django.contrib.auth',
-        '{{ cookiecutter.name }}',
+        '{{ cookiecutter.name }}.apps.{{ cookiecutter.name | capitalize }}Config',
     ),
     USE_TZ=True,
 )
