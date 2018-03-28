@@ -11,3 +11,5 @@ What does it do? (on top of django-admin startapp)
 * Default license - MIT
 * Timezone support
 * URLconf detection
+* Cascading test and dev dependencies
+* Gitlab CI tests and coverage
