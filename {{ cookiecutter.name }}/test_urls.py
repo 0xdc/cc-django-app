@@ -5,5 +5,5 @@ except ImportError:
     from django.conf.urls import url as path
 
 urlpatterns = [
-    path(r'', include('{{ cookiecutter.name }}.urls', namespace='{{ cookiecutter.name }}'),
+    path('', include('{{ cookiecutter.name }}.urls', namespace='{{ cookiecutter.name }}'),
 ]
