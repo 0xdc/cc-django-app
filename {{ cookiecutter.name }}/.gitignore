@@ -64,7 +64,7 @@ target/
 
 
 ## Static collection
-static/
+/static/
 
 ## Secrets
 db.sqlite3
