@@ -27,7 +27,7 @@ settings.configure(
 #endsnippet
 
 if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "urls.py")):
-    settings.ROOT_URLCONF = '{{ cookiecutter.name }}.test_urls'
+    settings.ROOT_URLCONF = 'test_urls'
 
 if os.path.exists(os.path.join(BASE_DIR, "{{ cookiecutter.name }}", "templates")):
     settings.TEMPLATES = [
